@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite for User and Store domains">
+    <test name="Test for user domain">
+        <groups>
+            <run>
+                <include name="API Users"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="APITests.APITest"/>
+            <class name="APITests.UserSchemaValidationTest"/>
+        </classes>
+    </test>
+    <test name="Test for store domain">
+        <groups>
+            <run>
+                <include name="API Store"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="APITests.APITest"/>
+        </classes>
+    </test>
+</suite>
