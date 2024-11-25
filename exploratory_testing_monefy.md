@@ -97,11 +97,11 @@
 ---
 
 ## Risks and Mitigation
-- **Usability Risk**: Issues with navigation or interface may frustrate users.
-  - **Mitigation**: Improve navigation and provide user guides.
-- **Data Loss Risk**: Transactions might not be backed up or restored correctly.
-  - **Mitigation**: Ensure robust backup and restore functionality with regular testing.
-- **Connectivity Risk**: Problems when there is a slow or intermittent internet connection.
-  - **Mitigation**: Implement better error handling and clear messages for users.
-- **Stability Risk**: App crashes unexpectedly.
-  - **Mitigation**: Conduct more rigorous load and stability testing.
+- **Regression Risk**: Future changes may introduce new issues.
+    - **Mitigation**: Implement automated regression tests.
+- **Coverage Risk**: Not all scenarios may have been tested.
+    - **Mitigation**: Expand test cases to cover more scenarios.
+- **Usability Risk**: User experience may not be optimal.
+    - **Mitigation**: Conduct usability testing with real users.
+- **Performance Risk**: Application performance under load may not have been evaluated.
+    - **Mitigation**: Perform performance testing under various load conditions.

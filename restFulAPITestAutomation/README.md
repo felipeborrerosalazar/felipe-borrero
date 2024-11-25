@@ -1,5 +1,7 @@
 # RESTful API Test Automation
 
+**Asumptions**: The API service is up and running and the base URL is correct. `https://github.com/swagger-api/swagger-petstore`
+
 ## Setup
 
 1. **Clone the repository**:
@@ -9,7 +11,7 @@
     ```
 2. **Install dependencies**:  Ensure you have Maven installed. Run the following command to install the project dependencies:
    ```sh
-   mvn clean install
+   mvn clean install -DskipTests
    ```
 3. **Configure Allure**: Allure is used for generating test reports. The configuration is already done in the `pom.xml` file and `allure.properties` file. 
 
@@ -18,7 +20,7 @@
 
 1. **Run the tests using Maven**: Run the following command to execute the tests:
    ```sh
-    mvn clean test
+    mvn test
     ```
 2. **Generate Allure report**: Run the following command to generate the Allure report:
     ```sh
