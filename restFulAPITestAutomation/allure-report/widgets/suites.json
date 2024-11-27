@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"ddbb23f95f1d14a3cd0c83e1a6b12c7f","name":"Test Suite for User and Store domains","statistic":{"failed":5,"broken":0,"skipped":0,"passed":12,"unknown":0,"total":17}},{"uid":"8399274b4bb69ec8699907dd6ef7de4e","name":"Default Suite","statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
