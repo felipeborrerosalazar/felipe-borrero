@@ -89,7 +89,6 @@
 - **Positive**: The restore process is intuitive and easy to follow.
 - **Positive**: Data integrity is maintained after restoring from a backup.
 - **Positive**: Confirmation messages are displayed correctly during backup and restore operations.
-- **Positive**: Error messages are displayed correctly when the backup or restore process fails.
 
 ---
 
