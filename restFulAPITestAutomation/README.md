@@ -27,8 +27,7 @@
      allure generate --clean && allure open
      ```
 ## Approach and Tech Stack
-
-The approach taken for this project involves creating automated tests for a RESTful API using TestNG and Rest-Assured. The tests are organized to cover various scenarios, including creating, retrieving, updating, and deleting users, as well as placing orders. The tests are written in Java and are executed using Maven. Allure is used for generating test reports.
+The approach taken for this project involves creating automated tests for a RESTful API using TestNG and Rest-Assured. The tests are organized to cover various scenarios, including creating, retrieving, updating, and deleting users, as well as placing orders. Some tests in the order domain use tokens for authentication. The tests are written in Java and are executed using Maven. Allure is used for generating test reports.
 
 ## Why This Tech Stack?
 - **Java**: Java is a widely used programming language for test automation. It is platform-independent and has a rich set of libraries and frameworks.

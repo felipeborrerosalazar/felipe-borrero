@@ -1,6 +1,6 @@
 # Exploratory Testing Session - Monefy App
 
-**Assumption**: The application tested is the iOS version of the Monefy App.
+**Assumption**: The application tested is the iOS free version of the Monefy App.
 
 ## Exploration Charter 1: Adding Transactions
 **Objective**: Evaluate how new transactions are added.
@@ -14,12 +14,11 @@
 
 **Findings**:
 - **Positive**: Categories for expenses and incomes are well-defined.
-- **Positive**: The number of included categories are enought for normal app usage.
+- **Positive**: The number of included categories are enough for normal app usage.
 - **Positive**: Adding expenses/incomes transactions is straightforward.
 - **Positive**: Future expenses/incomes can be added and filtered correctly on the dashboard.
 - **Positive**: Confirmation and error messages are displayed correctly.
 - **Positive**: Transactions can be backed up and restored, ensuring data is not lost.
-- **Negative**: 
 
 ---
 
@@ -36,8 +35,7 @@
 - **Positive**: The account creation process is straightforward and user-friendly.
 - **Positive**: Field validations are appropriate and provide clear feedback to the user.
 - **Positive**: Error messages are displayed correctly when invalid data is entered.
-- **Positive**: The number of included categories are enought for normal app usage.
-- **Negative**: 
+- **Positive**: The number of included categories are enough for normal app usage.
 ---
 
 ## Exploration Charter 3: Account Balance Modification
@@ -54,7 +52,6 @@
 - **Positive**: The balance modification process is intuitive and user-friendly.
 - **Positive**: Validations are handled correctly and provide clear feedback to the user.
 - **Positive**: Future-dated balance modifications are applied correctly, and the date range can be filtered on the main dashboard.
-- **Negative**: 
 
 ---
 
@@ -72,7 +69,27 @@
 - **Positive**: The distribution of expenses in the report is displayed correctly and intuitively.
 - **Positive**: The visualization of transactions by dates and future projections is correct.
 - **Positive**: Transactions can be exported to a CSV file, allowing for easy data backup and analysis.
-- **Negative**: 
+- **Negative**: The dashboard is initially filtered to display only the credit card account, which may lead to user confusion as it does not present the total balance of all accounts.
+
+---
+
+## Exploration Charter 5: Backup and Restore
+**Objective**: Verify the functionality of creating backups and restoring from them.
+
+**Areas to Explore**:
+- Backup creation process
+- Restore process
+- Data integrity after restore
+
+**Expectations**: Users should be able to create backups and restore from them without data loss or corruption.
+
+**Findings**:
+- **Positive**: The backup creation process is straightforward and user-friendly.
+- **Positive**: Backups are created quickly and stored correctly.
+- **Positive**: The restore process is intuitive and easy to follow.
+- **Positive**: Data integrity is maintained after restoring from a backup.
+- **Positive**: Confirmation messages are displayed correctly during backup and restore operations.
+- **Positive**: Error messages are displayed correctly when the backup or restore process fails.
 
 ---
 
@@ -90,7 +107,11 @@
     - **Priority**: Medium
     - **Reason**: Important for accurate financial tracking, but no critical issues were identified.
 
-4. **Account Creation**
+4. **Backup and Restore**
+    - **Priority**: Medium
+    - **Reason**: Ensures data safety and integrity, important for user trust.
+
+5. **Account Creation**
     - **Priority**: Low
     - **Reason**: Not the first user interaction, and no major issues were found.
 
@@ -103,5 +124,8 @@
     - **Mitigation**: Expand test cases to cover more scenarios.
 - **Usability Risk**: User experience may not be optimal.
     - **Mitigation**: Conduct usability testing with real users.
-- **Performance Risk**: Application performance under load may not have been evaluated.
-    - **Mitigation**: Perform performance testing under various load conditions.
+
+
+## Recommendations
+- **Enhance Authentication**: Consider adding multi-factor authentication in the free version to improve security.
+- **Conduct Regular Security Audits**: Perform regular security audits and penetration testing to identify and mitigate potential vulnerabilities.

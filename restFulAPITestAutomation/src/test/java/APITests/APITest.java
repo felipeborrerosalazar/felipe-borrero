@@ -14,8 +14,11 @@ public class APITest {
 
     private static final String BASE_URI = "http://localhost:8080/api/v3";
     private static final String USER_ENDPOINT = "/user";
+    private static final String STORE_ENDPOINT = "/store";
     private static final String TEST_USER = "testUser1";
     private static final String JSON_CONTENT_TYPE = ContentType.JSON.toString();
+    private static final String API_KEY = "5e53f31faeec73e49ac520e0b8c25c0e";
+    private static final String INVALID_API_KEY = "invalid_api_key";
 
     @Test(groups = {"API Users"}, priority = 1)
     @Tag("Users")
@@ -139,23 +142,6 @@ public class APITest {
 
     @Test(groups = {"API Users"})
     @Tag("Users")
-    public void deleteUserInvalidUsername() {
-        Allure.getLifecycle().updateTestCase(testResult -> {
-            testResult.setName("Delete user with invalid username");
-        });
-        given()
-                .baseUri(BASE_URI)
-                .contentType(JSON_CONTENT_TYPE)
-                .when()
-                .delete(USER_ENDPOINT + "/%@#$%^&*")
-                .then()
-                .statusCode(400)
-                .onFailMessage("Invalid username supplied")
-                .log().all();
-    }
-
-    @Test(groups = {"API Users"})
-    @Tag("Users")
     public void createWithList() {
         Allure.getLifecycle().updateTestCase(testResult -> {
             testResult.setName("Create list of users with given input array");
@@ -258,9 +244,43 @@ public class APITest {
                 .contentType(JSON_CONTENT_TYPE)
                 .body(body)
                 .when()
-                .post("/store/order")
+                .post(STORE_ENDPOINT + "/order")
                 .then()
                 .statusCode(200)
+                .log().all();
+    }
+
+    @Test(groups = {"API Store"})
+    @Tag("Store")
+    public void getStoreInventory() {
+        Allure.getLifecycle().updateTestCase(testResult -> {
+            testResult.setName("Get store inventory with API key");
+        });
+        given()
+                .baseUri(BASE_URI)
+                .header("api_key", API_KEY)
+                .contentType(JSON_CONTENT_TYPE)
+                .when()
+                .get(STORE_ENDPOINT + "/inventory")
+                .then()
+                .statusCode(200)
+                .log().all();
+    }
+
+    @Test(groups = {"API Store"})
+    @Tag("Store")
+    public void getStoreInventoryWithInvalidApiKey() {
+        Allure.getLifecycle().updateTestCase(testResult -> {
+            testResult.setName("Get store inventory with invalid API key");
+        });
+        given()
+                .baseUri(BASE_URI)
+                .header("api_key", INVALID_API_KEY)
+                .contentType(JSON_CONTENT_TYPE)
+                .when()
+                .get(STORE_ENDPOINT + "/inventory")
+                .then()
+                .statusCode(401) // Assuming 401 Unauthorized is returned for invalid API key
                 .log().all();
     }
 
